@@ -9,19 +9,20 @@ $SSH "git clone $PROJECT_GIT_URL /home/ubuntu/project1" &> /dev/null
 
 cat .env |  $SSH "cat > /home/ubuntu/.env"
 
-echo "running go mod tidy.. ⚙️ "
+echo "Running go mod tidy..🔧 "
 
 $SSH "/usr/local/go/bin/go mod tidy -C /home/ubuntu/project1" &> /dev/null
 
-echo "building go project... ⏳"
+echo "Building go project...⚙️"
 
 $SSH "/usr/local/go/bin/go build -C  /home/ubuntu/project1/" &> /dev/null
 
-echo "running the built binary... ⚙️ ⏳"
+echo "Running the built binary.....🚀"
 
 $SSH "SERVER_MODE=dev /home/ubuntu/project1/ice_cream_shop_rest_api" 
 
-echo "your server was running..."
+
+
 
 
 
